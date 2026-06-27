@@ -1,0 +1,11 @@
+node_modules
+.git
+.github
+.env*
+*.md
+Dockerfile
+.dockerignore
+.claude
+drizzle
+openapi.json
+*.log
