@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [prod]
   pull_request:
-    branches: [main]
+    branches: [prod]
 
 env:
   BUN_VERSION: "1.3.12"
@@ -69,7 +69,7 @@ jobs:
     name: Build & Push Image
     runs-on: ubuntu-latest
     needs: [quality, test]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
     steps:
       - uses: actions/checkout@v4
 
