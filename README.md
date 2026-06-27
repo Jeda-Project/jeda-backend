@@ -15,7 +15,7 @@ Backend for the **Jeda** iOS app — a journaling and mood check-in tool built f
 | API Docs      | [hono-openapi](https://github.com/rhinobase/hono-openapi) + [Scalar](https://scalar.com) (`/docs`)       |
 | Auth          | Static Bearer token (single-user gatekeeper)                                                              |
 | Lint / Format | [oxlint](https://oxc.rs/docs/guide/usage/linter) + [oxfmt](https://github.com/nicolo-ribaudo/oxfmt)      |
-| Deploy        | VPS (Ubuntu) — PM2 + Nginx + Let's Encrypt                                                                |
+| Deploy        | [Dokploy](https://dokploy.com) (self-hosted PaaS on VPS)                                                  |
 
 ---
 
