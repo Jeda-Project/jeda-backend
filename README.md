@@ -230,22 +230,15 @@ The image uses a multi-stage build: production dependencies only, no dev tooling
 
 ---
 
-## Production Deployment (VPS)
+## Production Deployment
 
-### PM2 + Nginx
+This project is deployed via **[Dokploy](https://dokploy.com)** — a self-hosted PaaS that manages containers, environment variables, and TLS automatically.
 
-```bash
-# Start and persist the process
-pm2 start ecosystem.config.cjs
-pm2 save
-pm2 startup
-```
+### Deploy Steps
 
-Nginx proxies `443 → http://127.0.0.1:4060` with TLS via Let's Encrypt:
-
-```bash
-certbot --nginx -d your-domain.com
-```
+1. Push to `prod` branch (via PR from `dev`)
+2. Dokploy detects the push, builds the Docker image, and redeploys the container
+3. Environment variables are managed through the Dokploy dashboard (not `.env` files)
 
 ### Security Checklist Before Deploy
 
