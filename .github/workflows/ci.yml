@@ -63,7 +63,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Run Unit Tests
-        run: bun test src
+        run: bun test src --coverage --coverage-threshold 100
 
   deploy:
     name: Build & Push Image
