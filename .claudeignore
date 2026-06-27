@@ -3,6 +3,5 @@ dist/
 drizzle/
 openapi.json
 *.tsbuildinfo
-.pm2/
 *.log
 .DS_Store
