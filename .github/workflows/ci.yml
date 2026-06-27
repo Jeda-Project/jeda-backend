@@ -24,14 +24,14 @@ jobs:
         with:
           bun-version: ${{ env.BUN_VERSION }}
 
-      - name: Cache node_modules
+      - name: Cache Node Modules
         id: cache-deps
         uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
 
-      - name: Install dependencies
+      - name: Install Dependencies
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: bun install --frozen-lockfile
 
@@ -51,18 +51,18 @@ jobs:
         with:
           bun-version: ${{ env.BUN_VERSION }}
 
-      - name: Cache node_modules
+      - name: Cache Node Modules
         id: cache-deps
         uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
 
-      - name: Install dependencies
+      - name: Install Dependencies
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: bun install --frozen-lockfile
 
-      - name: Run unit tests
+      - name: Run Unit Tests
         run: bun test src
 
   deploy:
@@ -80,10 +80,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-      - name: Set image name
+      - name: Set Image Name
         run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
 
-      - name: Build & push image
+      - name: Build & Push Image
         uses: docker/build-push-action@v6
         with:
           context: .

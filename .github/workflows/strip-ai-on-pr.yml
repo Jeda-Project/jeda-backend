@@ -23,7 +23,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: prod
 
-      - name: Remove AI, MCP & dev-only config files
+      - name: Remove AI, MCP & Dev-Only Config Files
         run: |
           git rm -rf --cached --ignore-unmatch \
             .claude \
@@ -34,7 +34,7 @@ jobs:
             PRODUCT.md \
             .mcp.json
 
-      - name: Commit and push if changes exist
+      - name: Commit and Push If Changes Exist
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
