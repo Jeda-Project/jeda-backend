@@ -12,5 +12,3 @@ import * as schema from "./schema/index.ts";
 const sql = neon(env.DATABASE_URL);
 
 export const db = drizzle(sql, { schema, casing: "snake_case" });
-
-export type Database = typeof db;

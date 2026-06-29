@@ -19,6 +19,7 @@ export const createEntryBodySchema = z
     sentimentScore: z.number().min(-1).max(1).optional(),
     reflectedPhrase: z.string().max(2_000).optional(),
     openQuestion: z.string().max(2_000).optional(),
+    reflectionText: z.string().max(10_000).optional(),
     createdAt: z.iso.datetime({ offset: true }).optional(),
   })
   .meta({ id: "CreateEntryBody" });

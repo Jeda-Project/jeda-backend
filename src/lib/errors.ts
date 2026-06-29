@@ -23,14 +23,3 @@ export class NotFoundError extends DomainError {
   }
 }
 
-export class ValidationError extends DomainError {
-  constructor(message = "Validation failed") {
-    super(message, 422, "VALIDATION_ERROR");
-  }
-}
-
-export class UnauthorizedError extends DomainError {
-  constructor(message = "Unauthorized") {
-    super(message, 401, "UNAUTHORIZED");
-  }
-}

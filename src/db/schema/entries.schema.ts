@@ -9,6 +9,7 @@ export const entries = pgTable("entries", {
   sentimentScore: real("sentiment_score"),
   reflectedPhrase: text("reflected_phrase"),
   openQuestion: text("open_question"),
+  reflectionText: text("reflection_text"),
   createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
     .defaultNow(),
