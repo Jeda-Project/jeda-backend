@@ -20,6 +20,9 @@ export const createEntryBodySchema = z
     reflectedPhrase: z.string().max(2_000).optional(),
     openQuestion: z.string().max(2_000).optional(),
     reflectionText: z.string().max(10_000).optional(),
+    emotion: z.string().optional(),
+    mood: z.string().optional(),
+    confidence: z.number().min(0).max(1).optional(),
     createdAt: z.iso.datetime({ offset: true }).optional(),
   })
   .meta({ id: "CreateEntryBody" });
