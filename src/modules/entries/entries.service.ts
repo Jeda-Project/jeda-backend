@@ -21,6 +21,7 @@ export const entriesService = {
       sentimentScore: body.sentimentScore,
       reflectedPhrase: body.reflectedPhrase,
       openQuestion: body.openQuestion,
+      reflectionText: body.reflectionText,
       createdAt: body.createdAt ? new Date(body.createdAt) : undefined,
     });
 

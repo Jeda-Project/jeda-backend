@@ -13,8 +13,6 @@ export const errorSchema = z
   })
   .meta({ id: "Error" });
 
-export type ErrorResponse = z.infer<typeof errorSchema>;
-
 // Helper: wraps a Zod schema as an OpenAPI JSON response block.
 export function jsonContent(
   schema: Parameters<typeof resolver>[0],
